@@ -1,0 +1,162 @@
+ 
+prograM:1
+--------------------------------------------------------------------------
+
+ 
+DECLARE
+r real:=3;
+a real;
+c real;
+BEGIN
+a:=3.14*r*r;
+c:=2*3.14*r;
+dbms_output.put_line('area is:'||a);
+dbms_output.put_line('Circumference is:'||c);
+END;
+-------------------------------------------------------------------------
+OUTPUT
+-------------------------------------------------------------------------
+area is:28.26
+Circumference is:18.84
+
+Statement processed.--
+-------------------------------------------------------------------
+PROGRAM:2
+DECLARE
+a varchar2(10):='Helloworld';
+BEGIN
+dbms_output.put_line('String is'||a);
+END;
+-----------------------------------------------------------------------OUTPUT
+------------
+tring isHelloworld
+
+Statement processed.
+
+0.01 seconds
+_-----------------------------------------------------------------------
+PROGRAM:3
+-----------------------------------------------------------------
+CREATE PROCEDURE greet
+AS
+BEGIN
+dbms_output.put_line('Hello world');
+END;
+
+
+OUTPUT
+-------------
+PROGRAM:4
+------------------------------------------------------------------------
+ECLARE
+a integer :=20;
+b integer:=30;
+c integer;
+BEGIN
+c:=a+b;
+dbms_output.put_line('Sum is:'||c);
+END;
+OUTPUT---
+------------
+Sum is:50
+
+Statement processed.
+
+0.01 seconds
+--------------------------------------------------------------------------
+PROGRAM5
+__---------
+DECLARE
+num1 number:=10;
+num2 number:=20;
+BEGIN
+dbms_output.put_line('Outer variables,num1:'||num1);
+dbms_output.put_line('Outer variables,num2:'||num2);
+DECLARE
+num3 number:=30;
+num4 number:=40;
+BEGIN
+dbms_output.put_line('Outer variable in inner block,num1:'||num1);
+dbms_output.put_line('Outer variable in inner block,num2:'||num2);
+dbms_output.put_line('Outer variable,num3:'||num3);
+dbms_output.put_line('Outer variables,num4:'||num4);
+END;
+END;
+
+OUTPUT
+_____________
+Outer variables,num1:10
+Outer variables,num2:20
+Outer variable in inner block,num1:10
+Outer variable in inner block,num2:20
+Outer variable,num3:30
+Outer variables,num4:40
+
+Statement processed.
+
+0.01 seconds
+__________________________________________________________________________PROGRAM->:6
+
+
+declare
+num integer:=3;
+res integer;
+fact integer;
+function factorial(num IN integer)
+return integer
+AS
+begin
+fact:=1;
+for i in 1..num loop
+  fact:=fact*i;
+end loop;
+return fact;
+end factorial;
+
+begin
+
+dbms_output.put_line('Factorial of:'||num);
+res:=factorial(num);
+dbms_output.put_line('Factorial is:'||res);
+
+end;
+_____________________________________________________________
+OUTPUT
+_______________________________________________________
+Factorial of:3
+Factorial is:6
+
+Statement processed.
+
+0.00 seconds
+ _____________________________
+PROGRAM ;->7
+------------------------------------------------
+DECLARE
+a integer:=10;
+b integer:=20;
+calc char(20):='addition';
+BEGIN
+case calc
+When 'addition' then dbms_output.put_line('addition possible');
+dbms_output.put_line(a+b);
+When 'subtraction' then dbms_output.put_line('Subtraction possible');
+dbms_output.put_line(a-b);
+When 'multiplication' then dbms_output.put_line('Multiplication possible');
+dbms_output.put_line(a*b);
+When 'division' then dbms_output.put_line('Division possible');
+dbms_output.put_line(a/b);
+else dbms_output.put_line('Invalid entry');
+END CASE;
+END;
+-----------------__________________________________________________________________
+OUTPUT
+
+addition possible
+30
+
+Statement processed.
+
+0.00 seconds
+
+--------------------------------------------------------------------------
